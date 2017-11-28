@@ -16,7 +16,7 @@ class ControlledInput extends Component {
     });
   }
 
-  handleCheckBoxChange = e => {
+  handleCheckBoxChange = (e) => {
     this.setState({
       happy: e.target.checked
     });
@@ -25,13 +25,19 @@ class ControlledInput extends Component {
   render() {
     return (
       <div>
-      <input type="text" onChange={ this.handleChange } value={this.state.name} />
+      <input 
+        type="text" 
+        onChange={this.handleChange} 
+        value={this.state.name} 
+      />
       <br />
       <br />
-      <label>
-        Happy?
-        <input type="checkbox" onChange={ this.handleCheckBoxChange } checked={this.state.happy} />
-      </label>
+      <label>Happy?</label>
+      <input 
+        type="checkbox" 
+        onChange={ this.handleCheckBoxChange } 
+        checked={this.state.happy} 
+      />
       <h3>Hello {this.state.name}{(this.state.happy) ? "!" : ":("}</h3>
       </div>
     );

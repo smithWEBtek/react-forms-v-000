@@ -5,8 +5,12 @@ class NameForm extends Component {
     super(props);
     this.state = {value: ''};
     
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    // this.handleChange = this.handleChange.bind(this);
+    // instead, in the form use:  
+      //  <input type="text" value={this.state.value} onChange={(e)=>this.handleChange(e)} />
+    // this.handleSubmit = this.handleSubmit.bind(this);
+    // instead, in the form use: 
+    //      <form onSubmit={(e)=>this.handleSubmit(e)}>
   }
   
   handleChange(event) {
@@ -16,16 +20,16 @@ class NameForm extends Component {
   }
   
   handleSubmit(event) {
-    if (this.state.value === 'asdf' ? alert('please do not type asdf') :  alert('A name was submitted: ' + this.state.value))
+    if (this.state.value === 'asdf' ? alert('please do NOT type asdf!!') :  alert('A name was submitted: ' + this.state.value))
     event.preventDefault();
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={(e)=>this.handleSubmit(e)}>
         <label>
           NameForm:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
+          <input type="text" value={this.state.value} onChange={(e)=>this.handleChange(e)} />
         </label>
         <input type="submit" value="Submit" />
       </form>

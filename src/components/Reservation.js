@@ -22,6 +22,10 @@ class Reservation extends React.Component {
     console.log(target.type)
   }
 
+  handleNumberOfGuestsInputChange(event) {
+    return event.target.value
+  }
+
   render() {
     return (
       <form>
@@ -31,7 +35,7 @@ class Reservation extends React.Component {
               name="isGoing"
               type="checkbox"
               checked={this.state.isGoing}
-              onChange={this.handleInputChange} />
+              onChange={(event) => this.handleInputChange(event)} />
             </label>        
             <br /> 
             <label>Is Vegan:
@@ -39,7 +43,8 @@ class Reservation extends React.Component {
                 name="isVegan"
                 type="radio"
                 selected={this.state.isVegan}
-                onChange={this.handleInputChange} />
+              
+                 />
             </label>
             <br /> 
             <label>Number of guests:
@@ -47,7 +52,7 @@ class Reservation extends React.Component {
                 name="numberOfGuests"
                 type="number"
                 value={this.state.numberOfGuests}
-                onChange={this.handleInputChange} />
+                onChange={(event) => this.handleNumberOfGuestsInputChange(event)} />
             </label>
         </fieldset>
       </form>

@@ -7,26 +7,12 @@ import FlavorForm from './components/FlavorForm'
 import Reservation from './components/Reservation'
 
 ReactDOM.render(
-  <ControlledInput />,
+  <div>
+    <ControlledInput />
+    <NameForm />
+    <EssayForm />
+    <Reservation />
+    <FlavorForm />
+  </div>,
   document.getElementById('root1')
-);
-
-ReactDOM.render(
-  <NameForm />,
-  document.getElementById('root2')
-);
-
-ReactDOM.render(
-  <EssayForm />,
-  document.getElementById('root3')
-);
-
-ReactDOM.render(
-  <FlavorForm />,
-  document.getElementById('root4')
-);
-
-ReactDOM.render(
-  <Reservation />,
-  document.getElementById('root5')
 );
