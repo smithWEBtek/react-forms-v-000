@@ -4,6 +4,7 @@ import ControlledInput from './components/ControlledInput'
 import NameForm from './components/NameForm'
 import EssayForm from './components/EssayForm'
 import FlavorForm from './components/FlavorForm'
+import Reservation from './components/Reservation'
 
 ReactDOM.render(
   <ControlledInput />,
@@ -23,4 +24,9 @@ ReactDOM.render(
 ReactDOM.render(
   <FlavorForm />,
   document.getElementById('root4')
+);
+
+ReactDOM.render(
+  <Reservation />,
+  document.getElementById('root5')
 );
